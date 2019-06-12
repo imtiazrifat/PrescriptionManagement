@@ -1,0 +1,10 @@
+D:\Projects\PrescriptionManagement\Model\bin\Debug\Model.dll.config
+D:\Projects\PrescriptionManagement\Model\bin\Debug\Model.dll
+D:\Projects\PrescriptionManagement\Model\bin\Debug\Model.pdb
+D:\Projects\PrescriptionManagement\Model\bin\Debug\EntityFramework.dll
+D:\Projects\PrescriptionManagement\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\PrescriptionManagement\Model\bin\Debug\EntityFramework.xml
+D:\Projects\PrescriptionManagement\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\PrescriptionManagement\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\Projects\PrescriptionManagement\Model\obj\Debug\Model.dll
+D:\Projects\PrescriptionManagement\Model\obj\Debug\Model.pdb

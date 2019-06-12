@@ -1,0 +1,147 @@
+﻿@model Model.Drug_Details
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutTheme.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Drug_Details</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DrugName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DrugName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DrugDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DrugDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GenericName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GenericName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RetailPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RetailPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DrugAvailableDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DrugAvailableDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DrugWithdrawDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DrugWithdrawDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Extra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Extra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDeleted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NotDeletable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NotDeletable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Drug_Companies.CompanyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Drug_Companies.CompanyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Drug_Type.DrugTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Drug_Type.DrugTypeName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,293 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutTheme.cshtml";
+}
+
+<h2>Index</h2>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    @*<script src="//code.jquery.com/jquery-1.10.2.js"></script>*@
+    @*<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>*@
+    <script src="~/JsController/GenaratePrescription/IndexJs.js"></script>
+
+
+
+    <title>Bootstrap 101 Template</title>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row col-sm-12" >
+
+            <div class="col-sm-2" style="background-color: lavenderblush;">
+                <div class="form-group">
+                    <br>
+                    <div class="col-sm-12">
+                        @*onchange="LoadPatientDetails()"*@
+                        <select id="dropDownDest" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="text" id="PatientID" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="text" id="PatientMobile" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="date" id="PatientDBO" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <button type="button" id="addAdvice" class="btn btn-info">+Advice</button>
+                </div>
+            </div>
+            <div class="col-sm-6" style="background-color: lavenderblush;">
+                <br>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <textarea id="diseaseDescription" class="form-control" rows="2" placeholder="All Description here"></textarea>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="text" id="medicineName" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="date" id="PatientDBO" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Sl.</th>
+                                <th>Code</th>
+                                <th>Medicine Name</th>
+                                <th>Taking Procedure</th>
+                                <th>Quantity</th>
+                                <th>Instruction</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyid">
+                            <tr></tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <br>
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="text" id="testName" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @* <div class="col-md-12">*@
+                        <table class="table table-striped col-md-12">
+                            <thead>
+                                <tr>
+                                    <th>Sl.</th>
+                                    <th>Code</th>
+                                    <th>Test Name</th>
+                                    <th>Instruction</th>
+                                    <th>BeforeOrAfter</th>
+
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodyMedicineid">
+                                <tr></tr>
+                            </tbody>
+                        </table>
+                        @*</div>*@
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg" style="width: 900px;">
+        <form class="form-horizontal" role="form">
+            <!-- Modal content-->
+            <div class="modal-content   ">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    @*<p>Some text in the modal.</p>*@
+                    @*<fieldset>*@
+                    <div class="form-group">
+                        @*<div class="col-sm-12">*@
+                        @*<input hidden type="text" id="Id" class=" form-control" placeholder="Search">*@
+                        <label class="control-label col-sm-2"> Medicine Name: </label>
+                        <div class="col-sm-4">
+                            <input readonly type="text" id="medicineName1" class=" form-control" placeholder="Search">
+                        </div>
+                        <label class="control-label col-sm-2"> Before/after: </label>
+                        <div class="col-sm-4">
+                            @* <input readonly type="text" id="beforeAfter" class=" form-control" placeholder="Search">*@
+                            <select id="beforeAfter" class=" form-control">
+                                <option value="">Select one...</option>
+                                <option value="Before Meal">Before Meal</option>
+                                <option value="After Meal">After Meal</option>
+                                <option value="Other">Other</option>
+
+                            </select>
+                        </div>
+
+                        @*</div>*@
+                    </div>
+
+                    <div class="form-group">
+                        @*<div class="col-sm-12">*@
+                        <label class="control-label col-sm-2"> Taking Procedure: </label>
+                        <div class="col-sm-4">
+                            @*<input readonly type="text" id="takingProcedure" class=" form-control" placeholder="Search">*@
+                            <select id="takingProcedure" class=" form-control">
+                                <option value="">Select one...</option>
+                                <option value="1-1-1">1-1-1</option>
+                                <option value="1-0-1">1-0-1</option>
+                                <option value="0-0-1">0-0-1</option>
+                                <option value="0-1-1">0-1-1</option>
+                                <option value="1-1-0">1-1-0</option>
+                                <option value="0-1-0">0-1-0</option>
+                                <option value="1-0-0">1-0-0</option>
+                                <option value="Other">Other</option>
+
+                            </select>
+                            <input type="text" id="takingProceduremanual" class=" form-control">
+                        </div>
+                        <label class="control-label col-sm-2"> Quantity: </label>
+                        <div class="col-sm-2">
+                            <input type="text" id="drugQuantity" class=" form-control" placeholder="Quantity">
+                        </div>
+                        <div class="col-sm-2">
+                            @*<input readonly type="text" id="takingProcedure" class=" form-control" placeholder="Search">*@
+                            <select id="quantityMeasurement" class=" form-control">
+                                <option value="">Unit</option>
+                                <option value="Unit">Pics</option>
+                                <option value="Days">Days</option>
+                                <option value="Months">Months</option>
+
+
+                            </select>
+
+                        </div>
+                        @*</div>*@
+                    </div>
+                    <div class="form-group">
+
+
+
+                        <label class="control-label col-md-offset-6 col-sm-2"> Special Instruction: </label>
+
+                        <div class="col-sm-3">
+                            <input type="text" id="specialInstruction" class=" form-control" placeholder="Search">
+                        </div>
+
+                    </div>
+                    @*</fieldset>*@
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="addMedicine" class="btn btn-default" data-dismiss="modal">Add Medicine</button>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal fade" id="myModalTest" role="dialog">
+    <div class="modal-dialog modal-lg" style=" width: 900px;">
+        <form class="form-horizontal" role="form">
+            <!-- Modal content-->
+            <div class="modal-content   ">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    @*<p>Some text in the modal.</p>*@
+                    @*<fieldset>*@
+                    <div class="form-group">
+                        @*<div class="col-sm-12">*@
+                        @*<input hidden type="text" id="Id" class=" form-control" placeholder="Search">*@
+                        <label class="control-label col-sm-2"> Test Name: </label>
+                        <div class="col-sm-4">
+                            <input readonly type="text" id="MedicalTestId1" class=" form-control" placeholder="Search">
+                        </div>
+                        <label class="control-label col-sm-2"> Before/after: </label>
+                        <div class="col-sm-4">
+                            @* <input readonly type="text" id="beforeAfter" class=" form-control" placeholder="Search">*@
+                            <select id="beforeOrAfter" class=" form-control">
+                                <option value="">Select one...</option>
+                                <option value="Before Meal">Before Meal</option>
+                                <option value="After Meal">After Meal</option>
+                                <option value="Other">Other</option>
+
+                            </select>
+                        </div>
+
+                        @*</div>*@
+                    </div>
+
+                    <div class="form-group">
+                        @*<div class="col-sm-12">*@
+                        <label class="col-sm-2"> Medical Test Advice: </label>
+                        
+                        <div class="col-sm-6">
+                            <input  type="text" id="MedicalTestAdvice" class=" form-control" placeholder="Search">
+                            
+
+                        </div>
+                        @*</div>*@
+                    </div>
+                    
+                    @*</fieldset>*@
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="addMedicalTest" class="btn btn-default" data-dismiss="modal">Add Test</button>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p>This is a large modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

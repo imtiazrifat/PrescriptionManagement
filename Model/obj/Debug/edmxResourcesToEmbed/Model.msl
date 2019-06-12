@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PrescriptionManagementDBModelStoreContainer" CdmEntityContainer="PrescriptionManagementDBEntities">
+    <EntitySetMapping Name="MedicalTests">
+      <EntityTypeMapping TypeName="PrescriptionManagementDBModel.MedicalTest">
+        <MappingFragment StoreEntitySet="MedicalTest">
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="NotDeletable" ColumnName="NotDeletable" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="MedicalTestAdvice" ColumnName="MedicalTestAdvice" />
+          <ScalarProperty Name="MedicalTestDetails" ColumnName="MedicalTestDetails" />
+          <ScalarProperty Name="MedicalTestName" ColumnName="MedicalTestName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patients">
+      <EntityTypeMapping TypeName="PrescriptionManagementDBModel.Patient">
+        <MappingFragment StoreEntitySet="Patient">
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="NotDeletable" ColumnName="NotDeletable" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="DateBecameCustomer" ColumnName="DateBecameCustomer" />
+          <ScalarProperty Name="PatientImageId" ColumnName="PatientImageId" />
+          <ScalarProperty Name="PatientMobile" ColumnName="PatientMobile" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doctors">
+      <EntityTypeMapping TypeName="PrescriptionManagementDBModel.Doctor">
+        <MappingFragment StoreEntitySet="Doctor">
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="NotDeletable" ColumnName="NotDeletable" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="VatRegNo" ColumnName="VatRegNo" />
+          <ScalarProperty Name="DocRegNo" ColumnName="DocRegNo" />
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoctorChembers">
+      <EntityTypeMapping TypeName="PrescriptionManagementDBModel.DoctorChember">
+        <MappingFragment StoreEntitySet="DoctorChember">
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="NotDeletable" ColumnName="NotDeletable" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ChembeEmail" ColumnName="ChembeEmail" />
+          <ScalarProperty Name="ChembeMobileNo" ColumnName="ChembeMobileNo" />
+          <ScalarProperty Name="ChembeCountry" ColumnName="ChembeCountry" />
+          <ScalarProperty Name="ChembeCity" ColumnName="ChembeCity" />
+          <ScalarProperty Name="ChembeAddress" ColumnName="ChembeAddress" />
+          <ScalarProperty Name="ChemberName" ColumnName="ChemberName" />
+          <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drug_Companies">
+      <EntityTypeMapping TypeName="PrescriptionManagementDBModel.Drug_Companies">
+        <MappingFragment StoreEntitySet="Drug_Companies">
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="NotDeletable" ColumnName="NotDeletable" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="CompanyDetails" ColumnName="CompanyDetails" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drug_Details">
+      <EntityTypeMapping TypeName="PrescriptionManagementDBModel.Drug_Details">
+        <MappingFragment StoreEntitySet="Drug_Details">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="NotDeletable" ColumnName="NotDeletable" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="DrugWithdrawDate" ColumnName="DrugWithdrawDate" />
+          <ScalarProperty Name="DrugAvailableDate" ColumnName="DrugAvailableDate" />
+          <ScalarProperty Name="RetailPrice" ColumnName="RetailPrice" />
+          <ScalarProperty Name="GenericName" ColumnName="GenericName" />
+          <ScalarProperty Name="DrugDescription" ColumnName="DrugDescription" />
+          <ScalarProperty Name="DrugName" ColumnName="DrugName" />
+          <ScalarProperty Name="DrugTypeId" ColumnName="DrugTypeId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drug_Type">
+      <EntityTypeMapping TypeName="PrescriptionManagementDBModel.Drug_Type">
+        <MappingFragment StoreEntitySet="Drug_Type">
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="NotDeletable" ColumnName="NotDeletable" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="DrugTypeCode" ColumnName="DrugTypeCode" />
+          <ScalarProperty Name="DrugTypeName" ColumnName="DrugTypeName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prescriptions">
+      <EntityTypeMapping TypeName="PrescriptionManagementDBModel.Prescription">
+        <MappingFragment StoreEntitySet="Prescription">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="NotDeletable" ColumnName="NotDeletable" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="PrescriptionDetails" ColumnName="PrescriptionDetails" />
+          <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+          <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrescriptionDrugs">
+      <EntityTypeMapping TypeName="PrescriptionManagementDBModel.PrescriptionDrug">
+        <MappingFragment StoreEntitySet="PrescriptionDrugs">
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="NotDeletable" ColumnName="NotDeletable" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="DrugQuantity" ColumnName="DrugQuantity" />
+          <ScalarProperty Name="TakingProcedure" ColumnName="TakingProcedure" />
+          <ScalarProperty Name="BeforeOrAfter" ColumnName="BeforeOrAfter" />
+          <ScalarProperty Name="SpecialInstruction" ColumnName="SpecialInstruction" />
+          <ScalarProperty Name="DrugId" ColumnName="DrugId" />
+          <ScalarProperty Name="PrescriptionId" ColumnName="PrescriptionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrescriptionMedicalTests">
+      <EntityTypeMapping TypeName="PrescriptionManagementDBModel.PrescriptionMedicalTest">
+        <MappingFragment StoreEntitySet="PrescriptionMedicalTest">
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="NotDeletable" ColumnName="NotDeletable" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="BeforeOrAfter" ColumnName="BeforeOrAfter" />
+          <ScalarProperty Name="SpecialInstruction" ColumnName="SpecialInstruction" />
+          <ScalarProperty Name="MedicalTestId" ColumnName="MedicalTestId" />
+          <ScalarProperty Name="PrescriptionId" ColumnName="PrescriptionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Advices">
+      <EntityTypeMapping TypeName="PrescriptionManagementDBModel.Advice">
+        <MappingFragment StoreEntitySet="Advices">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="NotDeletable" ColumnName="NotDeletable" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="AdviceCode" ColumnName="AdviceCode" />
+          <ScalarProperty Name="Advice1" ColumnName="Advice" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

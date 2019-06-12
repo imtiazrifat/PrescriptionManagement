@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="10f9101929f84f4c943a83cd1c838f45" Name="Diagram1" ZoomLevel="93">
+        <EntityTypeShape EntityType="PrescriptionManagementDBModel.MedicalTest" Width="1.5" PointX="3" PointY="12.125" />
+        <EntityTypeShape EntityType="PrescriptionManagementDBModel.Patient" Width="1.5" PointX="0.75" PointY="12.875" />
+        <EntityTypeShape EntityType="PrescriptionManagementDBModel.Doctor" Width="1.5" PointX="5.375" PointY="6.5" />
+        <EntityTypeShape EntityType="PrescriptionManagementDBModel.DoctorChember" Width="1.5" PointX="7.625" PointY="6.625" />
+        <EntityTypeShape EntityType="PrescriptionManagementDBModel.Drug_Companies" Width="1.5" PointX="5.375" PointY="21" />
+        <EntityTypeShape EntityType="PrescriptionManagementDBModel.Drug_Details" Width="1.5" PointX="7.625" PointY="18.25" />
+        <EntityTypeShape EntityType="PrescriptionManagementDBModel.Drug_Type" Width="1.5" PointX="5.375" PointY="16.75" />
+        <EntityTypeShape EntityType="PrescriptionManagementDBModel.Prescription" Width="1.5" PointX="7.625" PointY="11.625" />
+        <EntityTypeShape EntityType="PrescriptionManagementDBModel.PrescriptionDrug" Width="1.5" PointX="9.875" PointY="11.375" />
+        <EntityTypeShape EntityType="PrescriptionManagementDBModel.PrescriptionMedicalTest" Width="1.5" PointX="12.875" PointY="12" />
+        <AssociationConnector Association="PrescriptionManagementDBModel.FK_Pre_DoctorChember_Pre_Doctor" />
+        <AssociationConnector Association="PrescriptionManagementDBModel.FK_Prescription_Doctor1" />
+        <AssociationConnector Association="PrescriptionManagementDBModel.FK_Drug_Details_Drug_Companies" />
+        <AssociationConnector Association="PrescriptionManagementDBModel.FK_Drug_Details_Drug_Type" />
+        <AssociationConnector Association="PrescriptionManagementDBModel.FK_PrescriptionDrugs_PrescriptionDrugs" />
+        <AssociationConnector Association="PrescriptionManagementDBModel.FK_PrescriptionMedicalTest_MedicalTest1" />
+        <AssociationConnector Association="PrescriptionManagementDBModel.FK_Prescription_Patient" />
+        <AssociationConnector Association="PrescriptionManagementDBModel.FK_PrescriptionDrugs_Prescription" />
+        <AssociationConnector Association="PrescriptionManagementDBModel.FK_PrescriptionMedicalTest_Prescription" />
+        <EntityTypeShape EntityType="PrescriptionManagementDBModel.Advice" Width="1.5" PointX="0.75" PointY="0.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

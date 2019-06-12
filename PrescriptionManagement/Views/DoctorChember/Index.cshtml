@@ -1,0 +1,112 @@
+﻿@model IEnumerable<Model.DoctorChember>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutTheme.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ChemberName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChembeAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChembeCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChembeCountry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChembeMobileNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChembeEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NotDeletable)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Doctor.DoctorName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChemberName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChembeAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChembeCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChembeCountry)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChembeMobileNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChembeEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsDeleted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NotDeletable)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Doctor.DoctorName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

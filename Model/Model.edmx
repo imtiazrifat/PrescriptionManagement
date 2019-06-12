@@ -1,0 +1,1002 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PrescriptionManagementDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Advices">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Advice" Type="varchar" MaxLength="450" />
+          <Property Name="AdviceCode" Type="varchar" MaxLength="450" />
+          <Property Name="Note" Type="varchar" MaxLength="450" />
+          <Property Name="Extra" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="NotDeletable" Type="bit" />
+          <Property Name="CreationDate" Type="date" />
+          <Property Name="UpdateDate" Type="date" />
+          <Property Name="UserId" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DoctorName" Type="varchar" MaxLength="250" />
+          <Property Name="DocRegNo" Type="varchar" MaxLength="250" />
+          <Property Name="VatRegNo" Type="varchar" MaxLength="250" />
+          <Property Name="City" Type="varchar" MaxLength="250" />
+          <Property Name="Country" Type="varchar" MaxLength="250" />
+          <Property Name="MobileNo" Type="varchar" MaxLength="250" />
+          <Property Name="Email" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="NotDeletable" Type="bit" />
+          <Property Name="CreationDate" Type="date" />
+          <Property Name="UpdateDate" Type="date" />
+          <Property Name="UserId" Type="varchar" MaxLength="250" />
+          <Property Name="CompanyId" Type="int" />
+        </EntityType>
+        <EntityType Name="DoctorChember">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DoctorId" Type="int" />
+          <Property Name="ChemberName" Type="varchar" MaxLength="250" />
+          <Property Name="ChembeAddress" Type="varchar" MaxLength="250" />
+          <Property Name="ChembeCity" Type="varchar" MaxLength="250" />
+          <Property Name="ChembeCountry" Type="varchar" MaxLength="250" />
+          <Property Name="ChembeMobileNo" Type="varchar" MaxLength="250" />
+          <Property Name="ChembeEmail" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="NotDeletable" Type="bit" />
+          <Property Name="CreationDate" Type="date" />
+          <Property Name="UpdateDate" Type="date" />
+          <Property Name="UserId" Type="varchar" MaxLength="250" />
+          <Property Name="CompanyId" Type="int" />
+        </EntityType>
+        <EntityType Name="Drug_Companies">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="250" />
+          <Property Name="CompanyDetails" Type="varchar" MaxLength="450" />
+          <Property Name="Note" Type="varchar" MaxLength="450" />
+          <Property Name="Extra" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="NotDeletable" Type="bit" />
+          <Property Name="CreationDate" Type="date" />
+          <Property Name="UpdateDate" Type="date" />
+          <Property Name="UserId" Type="varchar" MaxLength="250" />
+          <Property Name="CompanyId" Type="int" />
+        </EntityType>
+        <EntityType Name="Drug_Details">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyId" Type="int" />
+          <Property Name="DrugTypeId" Type="int" />
+          <Property Name="DrugName" Type="varchar" MaxLength="450" />
+          <Property Name="DrugDescription" Type="varchar" MaxLength="450" />
+          <Property Name="GenericName" Type="varchar" MaxLength="450" />
+          <Property Name="RetailPrice" Type="varchar" MaxLength="450" />
+          <Property Name="DrugAvailableDate" Type="date" />
+          <Property Name="DrugWithdrawDate" Type="date" />
+          <Property Name="Note" Type="varchar" MaxLength="450" />
+          <Property Name="Extra" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="NotDeletable" Type="bit" />
+          <Property Name="CreationDate" Type="date" />
+          <Property Name="UpdateDate" Type="date" />
+          <Property Name="UserId" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Drug_Type">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DrugTypeName" Type="varchar" MaxLength="450" />
+          <Property Name="DrugTypeCode" Type="varchar" MaxLength="450" />
+          <Property Name="Note" Type="varchar" MaxLength="450" />
+          <Property Name="Extra" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="NotDeletable" Type="bit" />
+          <Property Name="CreationDate" Type="date" />
+          <Property Name="UpdateDate" Type="date" />
+          <Property Name="UserId" Type="varchar" MaxLength="250" />
+          <Property Name="CompanyId" Type="int" />
+        </EntityType>
+        <EntityType Name="MedicalTest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MedicalTestName" Type="varchar" MaxLength="450" />
+          <Property Name="MedicalTestDetails" Type="varchar" MaxLength="450" />
+          <Property Name="MedicalTestAdvice" Type="varchar" MaxLength="450" />
+          <Property Name="Note" Type="varchar" MaxLength="450" />
+          <Property Name="Extra" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="NotDeletable" Type="bit" />
+          <Property Name="CreationDate" Type="date" />
+          <Property Name="UpdateDate" Type="date" />
+          <Property Name="UserId" Type="varchar" MaxLength="250" />
+          <Property Name="CompanyId" Type="int" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PatientName" Type="varchar" MaxLength="450" />
+          <Property Name="PatientMobile" Type="varchar" MaxLength="450" />
+          <Property Name="PatientImageId" Type="varchar" MaxLength="450" />
+          <Property Name="DateBecameCustomer" Type="date" />
+          <Property Name="Note" Type="varchar" MaxLength="450" />
+          <Property Name="Extra" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="NotDeletable" Type="bit" />
+          <Property Name="CreationDate" Type="date" />
+          <Property Name="UpdateDate" Type="date" />
+          <Property Name="UserId" Type="varchar" MaxLength="250" />
+          <Property Name="CompanyId" Type="int" />
+        </EntityType>
+        <EntityType Name="Prescription">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PatientId" Type="int" />
+          <Property Name="DoctorId" Type="int" />
+          <Property Name="PrescriptionDetails" Type="varchar" MaxLength="450" />
+          <Property Name="Note" Type="varchar" MaxLength="450" />
+          <Property Name="Extra" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="NotDeletable" Type="bit" />
+          <Property Name="CreationDate" Type="date" />
+          <Property Name="UpdateDate" Type="date" />
+          <Property Name="UserId" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="PrescriptionDrugs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PrescriptionId" Type="int" />
+          <Property Name="DrugId" Type="int" />
+          <Property Name="SpecialInstruction" Type="varchar" MaxLength="450" />
+          <Property Name="BeforeOrAfter" Type="varchar" MaxLength="450" />
+          <Property Name="TakingProcedure" Type="varchar" MaxLength="450" />
+          <Property Name="DrugQuantity" Type="varchar" MaxLength="450" />
+          <Property Name="Note" Type="varchar" MaxLength="450" />
+          <Property Name="Extra" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="NotDeletable" Type="bit" />
+          <Property Name="CreationDate" Type="date" />
+          <Property Name="UpdateDate" Type="date" />
+          <Property Name="UserId" Type="varchar" MaxLength="250" />
+          <Property Name="CompanyId" Type="int" />
+        </EntityType>
+        <EntityType Name="PrescriptionMedicalTest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PrescriptionId" Type="int" />
+          <Property Name="MedicalTestId" Type="int" />
+          <Property Name="SpecialInstruction" Type="varchar" MaxLength="450" />
+          <Property Name="BeforeOrAfter" Type="varchar" MaxLength="450" />
+          <Property Name="Note" Type="varchar" MaxLength="450" />
+          <Property Name="Extra" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="NotDeletable" Type="bit" />
+          <Property Name="CreationDate" Type="date" />
+          <Property Name="UpdateDate" Type="date" />
+          <Property Name="UserId" Type="varchar" MaxLength="250" />
+          <Property Name="CompanyId" Type="int" />
+        </EntityType>
+        <Association Name="FK_Drug_Details_Drug_Companies">
+          <End Role="Drug_Companies" Type="Self.Drug_Companies" Multiplicity="0..1" />
+          <End Role="Drug_Details" Type="Self.Drug_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drug_Companies">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Drug_Details">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Drug_Details_Drug_Type">
+          <End Role="Drug_Type" Type="Self.Drug_Type" Multiplicity="0..1" />
+          <End Role="Drug_Details" Type="Self.Drug_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drug_Type">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Drug_Details">
+              <PropertyRef Name="DrugTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pre_DoctorChember_Pre_Doctor">
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="0..1" />
+          <End Role="DoctorChember" Type="Self.DoctorChember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DoctorChember">
+              <PropertyRef Name="DoctorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prescription_Doctor1">
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="0..1" />
+          <End Role="Prescription" Type="Self.Prescription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Prescription">
+              <PropertyRef Name="DoctorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prescription_Patient">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="Prescription" Type="Self.Prescription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Prescription">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PrescriptionDrugs_Prescription">
+          <End Role="Prescription" Type="Self.Prescription" Multiplicity="0..1" />
+          <End Role="PrescriptionDrugs" Type="Self.PrescriptionDrugs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prescription">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PrescriptionDrugs">
+              <PropertyRef Name="PrescriptionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PrescriptionDrugs_PrescriptionDrugs">
+          <End Role="Drug_Details" Type="Self.Drug_Details" Multiplicity="0..1" />
+          <End Role="PrescriptionDrugs" Type="Self.PrescriptionDrugs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drug_Details">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PrescriptionDrugs">
+              <PropertyRef Name="DrugId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PrescriptionMedicalTest_MedicalTest1">
+          <End Role="MedicalTest" Type="Self.MedicalTest" Multiplicity="0..1" />
+          <End Role="PrescriptionMedicalTest" Type="Self.PrescriptionMedicalTest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MedicalTest">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PrescriptionMedicalTest">
+              <PropertyRef Name="MedicalTestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PrescriptionMedicalTest_Prescription">
+          <End Role="Prescription" Type="Self.Prescription" Multiplicity="1" />
+          <End Role="PrescriptionMedicalTest" Type="Self.PrescriptionMedicalTest" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Prescription">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PrescriptionMedicalTest">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PrescriptionManagementDBModelStoreContainer">
+          <EntitySet Name="Advices" EntityType="Self.Advices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Doctor" EntityType="Self.Doctor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DoctorChember" EntityType="Self.DoctorChember" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Drug_Companies" EntityType="Self.Drug_Companies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Drug_Details" EntityType="Self.Drug_Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Drug_Type" EntityType="Self.Drug_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MedicalTest" EntityType="Self.MedicalTest" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prescription" EntityType="Self.Prescription" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PrescriptionDrugs" EntityType="Self.PrescriptionDrugs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PrescriptionMedicalTest" EntityType="Self.PrescriptionMedicalTest" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Drug_Details_Drug_Companies" Association="Self.FK_Drug_Details_Drug_Companies">
+            <End Role="Drug_Companies" EntitySet="Drug_Companies" />
+            <End Role="Drug_Details" EntitySet="Drug_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Drug_Details_Drug_Type" Association="Self.FK_Drug_Details_Drug_Type">
+            <End Role="Drug_Type" EntitySet="Drug_Type" />
+            <End Role="Drug_Details" EntitySet="Drug_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pre_DoctorChember_Pre_Doctor" Association="Self.FK_Pre_DoctorChember_Pre_Doctor">
+            <End Role="Doctor" EntitySet="Doctor" />
+            <End Role="DoctorChember" EntitySet="DoctorChember" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prescription_Doctor1" Association="Self.FK_Prescription_Doctor1">
+            <End Role="Doctor" EntitySet="Doctor" />
+            <End Role="Prescription" EntitySet="Prescription" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prescription_Patient" Association="Self.FK_Prescription_Patient">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Prescription" EntitySet="Prescription" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PrescriptionDrugs_Prescription" Association="Self.FK_PrescriptionDrugs_Prescription">
+            <End Role="Prescription" EntitySet="Prescription" />
+            <End Role="PrescriptionDrugs" EntitySet="PrescriptionDrugs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PrescriptionDrugs_PrescriptionDrugs" Association="Self.FK_PrescriptionDrugs_PrescriptionDrugs">
+            <End Role="Drug_Details" EntitySet="Drug_Details" />
+            <End Role="PrescriptionDrugs" EntitySet="PrescriptionDrugs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PrescriptionMedicalTest_MedicalTest1" Association="Self.FK_PrescriptionMedicalTest_MedicalTest1">
+            <End Role="MedicalTest" EntitySet="MedicalTest" />
+            <End Role="PrescriptionMedicalTest" EntitySet="PrescriptionMedicalTest" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PrescriptionMedicalTest_Prescription" Association="Self.FK_PrescriptionMedicalTest_Prescription">
+            <End Role="Prescription" EntitySet="Prescription" />
+            <End Role="PrescriptionMedicalTest" EntitySet="PrescriptionMedicalTest" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PrescriptionManagementDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PrescriptionManagementDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MedicalTests" EntityType="PrescriptionManagementDBModel.MedicalTest" />
+          <EntitySet Name="Patients" EntityType="PrescriptionManagementDBModel.Patient" />
+          <EntitySet Name="Doctors" EntityType="PrescriptionManagementDBModel.Doctor" />
+          <EntitySet Name="DoctorChembers" EntityType="PrescriptionManagementDBModel.DoctorChember" />
+          <EntitySet Name="Drug_Companies" EntityType="PrescriptionManagementDBModel.Drug_Companies" />
+          <EntitySet Name="Drug_Details" EntityType="PrescriptionManagementDBModel.Drug_Details" />
+          <EntitySet Name="Drug_Type" EntityType="PrescriptionManagementDBModel.Drug_Type" />
+          <EntitySet Name="Prescriptions" EntityType="PrescriptionManagementDBModel.Prescription" />
+          <EntitySet Name="PrescriptionDrugs" EntityType="PrescriptionManagementDBModel.PrescriptionDrug" />
+          <EntitySet Name="PrescriptionMedicalTests" EntityType="PrescriptionManagementDBModel.PrescriptionMedicalTest" />
+          <AssociationSet Name="FK_Pre_DoctorChember_Pre_Doctor" Association="PrescriptionManagementDBModel.FK_Pre_DoctorChember_Pre_Doctor">
+            <End Role="Doctor" EntitySet="Doctors" />
+            <End Role="DoctorChember" EntitySet="DoctorChembers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prescription_Doctor1" Association="PrescriptionManagementDBModel.FK_Prescription_Doctor1">
+            <End Role="Doctor" EntitySet="Doctors" />
+            <End Role="Prescription" EntitySet="Prescriptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Drug_Details_Drug_Companies" Association="PrescriptionManagementDBModel.FK_Drug_Details_Drug_Companies">
+            <End Role="Drug_Companies" EntitySet="Drug_Companies" />
+            <End Role="Drug_Details" EntitySet="Drug_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Drug_Details_Drug_Type" Association="PrescriptionManagementDBModel.FK_Drug_Details_Drug_Type">
+            <End Role="Drug_Type" EntitySet="Drug_Type" />
+            <End Role="Drug_Details" EntitySet="Drug_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PrescriptionDrugs_PrescriptionDrugs" Association="PrescriptionManagementDBModel.FK_PrescriptionDrugs_PrescriptionDrugs">
+            <End Role="Drug_Details" EntitySet="Drug_Details" />
+            <End Role="PrescriptionDrug" EntitySet="PrescriptionDrugs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PrescriptionMedicalTest_MedicalTest1" Association="PrescriptionManagementDBModel.FK_PrescriptionMedicalTest_MedicalTest1">
+            <End Role="MedicalTest" EntitySet="MedicalTests" />
+            <End Role="PrescriptionMedicalTest" EntitySet="PrescriptionMedicalTests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prescription_Patient" Association="PrescriptionManagementDBModel.FK_Prescription_Patient">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="Prescription" EntitySet="Prescriptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PrescriptionDrugs_Prescription" Association="PrescriptionManagementDBModel.FK_PrescriptionDrugs_Prescription">
+            <End Role="Prescription" EntitySet="Prescriptions" />
+            <End Role="PrescriptionDrug" EntitySet="PrescriptionDrugs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PrescriptionMedicalTest_Prescription" Association="PrescriptionManagementDBModel.FK_PrescriptionMedicalTest_Prescription">
+            <End Role="Prescription" EntitySet="Prescriptions" />
+            <End Role="PrescriptionMedicalTest" EntitySet="PrescriptionMedicalTests" />
+          </AssociationSet>
+          <EntitySet Name="Advices" EntityType="PrescriptionManagementDBModel.Advice" />
+          </EntityContainer>
+        <EntityType Name="MedicalTest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MedicalTestName" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="MedicalTestDetails" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="MedicalTestAdvice" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="Note" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="Extra" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="NotDeletable" Type="Boolean" />
+          <Property Name="CreationDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+          <Property Name="UserId" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyId" Type="Int32" />
+          <NavigationProperty Name="PrescriptionMedicalTests" Relationship="PrescriptionManagementDBModel.FK_PrescriptionMedicalTest_MedicalTest1" FromRole="MedicalTest" ToRole="PrescriptionMedicalTest" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientName" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="PatientMobile" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="PatientImageId" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="DateBecameCustomer" Type="DateTime" Precision="0" />
+          <Property Name="Note" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="Extra" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="NotDeletable" Type="Boolean" />
+          <Property Name="CreationDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+          <Property Name="UserId" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyId" Type="Int32" />
+          <NavigationProperty Name="Prescriptions" Relationship="PrescriptionManagementDBModel.FK_Prescription_Patient" FromRole="Patient" ToRole="Prescription" />
+        </EntityType>
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DoctorName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="DocRegNo" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="VatRegNo" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNo" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="NotDeletable" Type="Boolean" />
+          <Property Name="CreationDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+          <Property Name="UserId" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyId" Type="Int32" />
+          <NavigationProperty Name="DoctorChembers" Relationship="PrescriptionManagementDBModel.FK_Pre_DoctorChember_Pre_Doctor" FromRole="Doctor" ToRole="DoctorChember" />
+          <NavigationProperty Name="Prescriptions" Relationship="PrescriptionManagementDBModel.FK_Prescription_Doctor1" FromRole="Doctor" ToRole="Prescription" />
+        </EntityType>
+        <EntityType Name="DoctorChember">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DoctorId" Type="Int32" />
+          <Property Name="ChemberName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ChembeAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ChembeCity" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ChembeCountry" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ChembeMobileNo" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ChembeEmail" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="NotDeletable" Type="Boolean" />
+          <Property Name="CreationDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+          <Property Name="UserId" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyId" Type="Int32" />
+          <NavigationProperty Name="Doctor" Relationship="PrescriptionManagementDBModel.FK_Pre_DoctorChember_Pre_Doctor" FromRole="DoctorChember" ToRole="Doctor" />
+        </EntityType>
+        <EntityType Name="Drug_Companies">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyDetails" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="Note" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="Extra" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="NotDeletable" Type="Boolean" />
+          <Property Name="CreationDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+          <Property Name="UserId" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyId" Type="Int32" />
+          <NavigationProperty Name="Drug_Details" Relationship="PrescriptionManagementDBModel.FK_Drug_Details_Drug_Companies" FromRole="Drug_Companies" ToRole="Drug_Details" />
+        </EntityType>
+        <EntityType Name="Drug_Details">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyId" Type="Int32" />
+          <Property Name="DrugTypeId" Type="Int32" />
+          <Property Name="DrugName" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="DrugDescription" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="GenericName" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="RetailPrice" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="DrugAvailableDate" Type="DateTime" Precision="0" />
+          <Property Name="DrugWithdrawDate" Type="DateTime" Precision="0" />
+          <Property Name="Note" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="Extra" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="NotDeletable" Type="Boolean" />
+          <Property Name="CreationDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+          <Property Name="UserId" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Drug_Companies" Relationship="PrescriptionManagementDBModel.FK_Drug_Details_Drug_Companies" FromRole="Drug_Details" ToRole="Drug_Companies" />
+          <NavigationProperty Name="Drug_Type" Relationship="PrescriptionManagementDBModel.FK_Drug_Details_Drug_Type" FromRole="Drug_Details" ToRole="Drug_Type" />
+          <NavigationProperty Name="PrescriptionDrugs" Relationship="PrescriptionManagementDBModel.FK_PrescriptionDrugs_PrescriptionDrugs" FromRole="Drug_Details" ToRole="PrescriptionDrug" />
+        </EntityType>
+        <EntityType Name="Drug_Type">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DrugTypeName" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="DrugTypeCode" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="Note" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="Extra" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="NotDeletable" Type="Boolean" />
+          <Property Name="CreationDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+          <Property Name="UserId" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyId" Type="Int32" />
+          <NavigationProperty Name="Drug_Details" Relationship="PrescriptionManagementDBModel.FK_Drug_Details_Drug_Type" FromRole="Drug_Type" ToRole="Drug_Details" />
+        </EntityType>
+        <EntityType Name="Prescription">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="Int32" />
+          <Property Name="DoctorId" Type="Int32" />
+          <Property Name="PrescriptionDetails" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="Note" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="Extra" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="NotDeletable" Type="Boolean" />
+          <Property Name="CreationDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+          <Property Name="UserId" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Doctor" Relationship="PrescriptionManagementDBModel.FK_Prescription_Doctor1" FromRole="Prescription" ToRole="Doctor" />
+          <NavigationProperty Name="Patient" Relationship="PrescriptionManagementDBModel.FK_Prescription_Patient" FromRole="Prescription" ToRole="Patient" />
+          <NavigationProperty Name="PrescriptionDrugs" Relationship="PrescriptionManagementDBModel.FK_PrescriptionDrugs_Prescription" FromRole="Prescription" ToRole="PrescriptionDrug" />
+          <NavigationProperty Name="PrescriptionMedicalTest" Relationship="PrescriptionManagementDBModel.FK_PrescriptionMedicalTest_Prescription" FromRole="Prescription" ToRole="PrescriptionMedicalTest" />
+        </EntityType>
+        <EntityType Name="PrescriptionDrug">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PrescriptionId" Type="Int32" />
+          <Property Name="DrugId" Type="Int32" />
+          <Property Name="SpecialInstruction" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="BeforeOrAfter" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="TakingProcedure" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="DrugQuantity" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="Note" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="Extra" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="NotDeletable" Type="Boolean" />
+          <Property Name="CreationDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+          <Property Name="UserId" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyId" Type="Int32" />
+          <NavigationProperty Name="Drug_Details" Relationship="PrescriptionManagementDBModel.FK_PrescriptionDrugs_PrescriptionDrugs" FromRole="PrescriptionDrug" ToRole="Drug_Details" />
+          <NavigationProperty Name="Prescription" Relationship="PrescriptionManagementDBModel.FK_PrescriptionDrugs_Prescription" FromRole="PrescriptionDrug" ToRole="Prescription" />
+        </EntityType>
+        <EntityType Name="PrescriptionMedicalTest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PrescriptionId" Type="Int32" />
+          <Property Name="MedicalTestId" Type="Int32" />
+          <Property Name="SpecialInstruction" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="BeforeOrAfter" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="Note" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="Extra" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="NotDeletable" Type="Boolean" />
+          <Property Name="CreationDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+          <Property Name="UserId" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyId" Type="Int32" />
+          <NavigationProperty Name="MedicalTest" Relationship="PrescriptionManagementDBModel.FK_PrescriptionMedicalTest_MedicalTest1" FromRole="PrescriptionMedicalTest" ToRole="MedicalTest" />
+          <NavigationProperty Name="Prescription" Relationship="PrescriptionManagementDBModel.FK_PrescriptionMedicalTest_Prescription" FromRole="PrescriptionMedicalTest" ToRole="Prescription" />
+        </EntityType>
+        <Association Name="FK_Pre_DoctorChember_Pre_Doctor">
+          <End Type="PrescriptionManagementDBModel.Doctor" Role="Doctor" Multiplicity="0..1" />
+          <End Type="PrescriptionManagementDBModel.DoctorChember" Role="DoctorChember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DoctorChember">
+              <PropertyRef Name="DoctorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prescription_Doctor1">
+          <End Type="PrescriptionManagementDBModel.Doctor" Role="Doctor" Multiplicity="0..1" />
+          <End Type="PrescriptionManagementDBModel.Prescription" Role="Prescription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Prescription">
+              <PropertyRef Name="DoctorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Drug_Details_Drug_Companies">
+          <End Type="PrescriptionManagementDBModel.Drug_Companies" Role="Drug_Companies" Multiplicity="0..1" />
+          <End Type="PrescriptionManagementDBModel.Drug_Details" Role="Drug_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drug_Companies">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Drug_Details">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Drug_Details_Drug_Type">
+          <End Type="PrescriptionManagementDBModel.Drug_Type" Role="Drug_Type" Multiplicity="0..1" />
+          <End Type="PrescriptionManagementDBModel.Drug_Details" Role="Drug_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drug_Type">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Drug_Details">
+              <PropertyRef Name="DrugTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PrescriptionDrugs_PrescriptionDrugs">
+          <End Type="PrescriptionManagementDBModel.Drug_Details" Role="Drug_Details" Multiplicity="0..1" />
+          <End Type="PrescriptionManagementDBModel.PrescriptionDrug" Role="PrescriptionDrug" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drug_Details">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PrescriptionDrug">
+              <PropertyRef Name="DrugId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PrescriptionMedicalTest_MedicalTest1">
+          <End Type="PrescriptionManagementDBModel.MedicalTest" Role="MedicalTest" Multiplicity="0..1" />
+          <End Type="PrescriptionManagementDBModel.PrescriptionMedicalTest" Role="PrescriptionMedicalTest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MedicalTest">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PrescriptionMedicalTest">
+              <PropertyRef Name="MedicalTestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prescription_Patient">
+          <End Type="PrescriptionManagementDBModel.Patient" Role="Patient" Multiplicity="0..1" />
+          <End Type="PrescriptionManagementDBModel.Prescription" Role="Prescription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Prescription">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PrescriptionDrugs_Prescription">
+          <End Type="PrescriptionManagementDBModel.Prescription" Role="Prescription" Multiplicity="0..1" />
+          <End Type="PrescriptionManagementDBModel.PrescriptionDrug" Role="PrescriptionDrug" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prescription">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PrescriptionDrug">
+              <PropertyRef Name="PrescriptionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PrescriptionMedicalTest_Prescription">
+          <End Type="PrescriptionManagementDBModel.Prescription" Role="Prescription" Multiplicity="1" />
+          <End Type="PrescriptionManagementDBModel.PrescriptionMedicalTest" Role="PrescriptionMedicalTest" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Prescription">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PrescriptionMedicalTest">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Advice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Advice1" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="AdviceCode" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="Note" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="Extra" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="NotDeletable" Type="Boolean" />
+          <Property Name="CreationDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+          <Property Name="UserId" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PrescriptionManagementDBModelStoreContainer" CdmEntityContainer="PrescriptionManagementDBEntities">
+          <EntitySetMapping Name="MedicalTests">
+            <EntityTypeMapping TypeName="PrescriptionManagementDBModel.MedicalTest">
+              <MappingFragment StoreEntitySet="MedicalTest">
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="NotDeletable" ColumnName="NotDeletable" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Extra" ColumnName="Extra" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="MedicalTestAdvice" ColumnName="MedicalTestAdvice" />
+                <ScalarProperty Name="MedicalTestDetails" ColumnName="MedicalTestDetails" />
+                <ScalarProperty Name="MedicalTestName" ColumnName="MedicalTestName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="PrescriptionManagementDBModel.Patient">
+              <MappingFragment StoreEntitySet="Patient">
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="NotDeletable" ColumnName="NotDeletable" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Extra" ColumnName="Extra" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="DateBecameCustomer" ColumnName="DateBecameCustomer" />
+                <ScalarProperty Name="PatientImageId" ColumnName="PatientImageId" />
+                <ScalarProperty Name="PatientMobile" ColumnName="PatientMobile" />
+                <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doctors">
+            <EntityTypeMapping TypeName="PrescriptionManagementDBModel.Doctor">
+              <MappingFragment StoreEntitySet="Doctor">
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="NotDeletable" ColumnName="NotDeletable" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="VatRegNo" ColumnName="VatRegNo" />
+                <ScalarProperty Name="DocRegNo" ColumnName="DocRegNo" />
+                <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DoctorChembers">
+            <EntityTypeMapping TypeName="PrescriptionManagementDBModel.DoctorChember">
+              <MappingFragment StoreEntitySet="DoctorChember">
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="NotDeletable" ColumnName="NotDeletable" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ChembeEmail" ColumnName="ChembeEmail" />
+                <ScalarProperty Name="ChembeMobileNo" ColumnName="ChembeMobileNo" />
+                <ScalarProperty Name="ChembeCountry" ColumnName="ChembeCountry" />
+                <ScalarProperty Name="ChembeCity" ColumnName="ChembeCity" />
+                <ScalarProperty Name="ChembeAddress" ColumnName="ChembeAddress" />
+                <ScalarProperty Name="ChemberName" ColumnName="ChemberName" />
+                <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Drug_Companies">
+            <EntityTypeMapping TypeName="PrescriptionManagementDBModel.Drug_Companies">
+              <MappingFragment StoreEntitySet="Drug_Companies">
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="NotDeletable" ColumnName="NotDeletable" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Extra" ColumnName="Extra" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="CompanyDetails" ColumnName="CompanyDetails" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Drug_Details">
+            <EntityTypeMapping TypeName="PrescriptionManagementDBModel.Drug_Details">
+              <MappingFragment StoreEntitySet="Drug_Details">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="NotDeletable" ColumnName="NotDeletable" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Extra" ColumnName="Extra" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="DrugWithdrawDate" ColumnName="DrugWithdrawDate" />
+                <ScalarProperty Name="DrugAvailableDate" ColumnName="DrugAvailableDate" />
+                <ScalarProperty Name="RetailPrice" ColumnName="RetailPrice" />
+                <ScalarProperty Name="GenericName" ColumnName="GenericName" />
+                <ScalarProperty Name="DrugDescription" ColumnName="DrugDescription" />
+                <ScalarProperty Name="DrugName" ColumnName="DrugName" />
+                <ScalarProperty Name="DrugTypeId" ColumnName="DrugTypeId" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Drug_Type">
+            <EntityTypeMapping TypeName="PrescriptionManagementDBModel.Drug_Type">
+              <MappingFragment StoreEntitySet="Drug_Type">
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="NotDeletable" ColumnName="NotDeletable" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Extra" ColumnName="Extra" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="DrugTypeCode" ColumnName="DrugTypeCode" />
+                <ScalarProperty Name="DrugTypeName" ColumnName="DrugTypeName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prescriptions">
+            <EntityTypeMapping TypeName="PrescriptionManagementDBModel.Prescription">
+              <MappingFragment StoreEntitySet="Prescription">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="NotDeletable" ColumnName="NotDeletable" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Extra" ColumnName="Extra" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="PrescriptionDetails" ColumnName="PrescriptionDetails" />
+                <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrescriptionDrugs">
+            <EntityTypeMapping TypeName="PrescriptionManagementDBModel.PrescriptionDrug">
+              <MappingFragment StoreEntitySet="PrescriptionDrugs">
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="NotDeletable" ColumnName="NotDeletable" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Extra" ColumnName="Extra" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="DrugQuantity" ColumnName="DrugQuantity" />
+                <ScalarProperty Name="TakingProcedure" ColumnName="TakingProcedure" />
+                <ScalarProperty Name="BeforeOrAfter" ColumnName="BeforeOrAfter" />
+                <ScalarProperty Name="SpecialInstruction" ColumnName="SpecialInstruction" />
+                <ScalarProperty Name="DrugId" ColumnName="DrugId" />
+                <ScalarProperty Name="PrescriptionId" ColumnName="PrescriptionId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrescriptionMedicalTests">
+            <EntityTypeMapping TypeName="PrescriptionManagementDBModel.PrescriptionMedicalTest">
+              <MappingFragment StoreEntitySet="PrescriptionMedicalTest">
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="NotDeletable" ColumnName="NotDeletable" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Extra" ColumnName="Extra" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="BeforeOrAfter" ColumnName="BeforeOrAfter" />
+                <ScalarProperty Name="SpecialInstruction" ColumnName="SpecialInstruction" />
+                <ScalarProperty Name="MedicalTestId" ColumnName="MedicalTestId" />
+                <ScalarProperty Name="PrescriptionId" ColumnName="PrescriptionId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Advices">
+            <EntityTypeMapping TypeName="PrescriptionManagementDBModel.Advice">
+              <MappingFragment StoreEntitySet="Advices">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="NotDeletable" ColumnName="NotDeletable" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Extra" ColumnName="Extra" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="AdviceCode" ColumnName="AdviceCode" />
+                <ScalarProperty Name="Advice1" ColumnName="Advice" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
